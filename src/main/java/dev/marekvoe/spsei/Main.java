@@ -8,6 +8,7 @@ import dev.marekvoe.spsei.listeners.JoinListener;
 import dev.marekvoe.spsei.listeners.QuitListener;
 import dev.marekvoe.spsei.playersystem.PlayerManager;
 import dev.marekvoe.spsei.tpasystem.TpaManager;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -33,6 +34,20 @@ public final class Main extends JavaPlugin {
           this.guildManager = new GuildManager(this);
           registerCommands();
           registerListeners();
+
+          int task;
+
+          task = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+              int time = 1800;
+              @Override
+              public void run() {
+                  time--;
+                  if (time < 1) {
+
+                      Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "save-all");
+                  }
+              }
+          }, 0,20);
     }
 
     public void registerListeners() {
@@ -52,7 +67,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-
+      getConfigManager().save("player-data.yml");
     }
 
     public String getHomePrefix() {

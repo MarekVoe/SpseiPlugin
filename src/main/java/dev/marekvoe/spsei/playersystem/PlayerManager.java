@@ -24,5 +24,6 @@ public class PlayerManager {
                 .set(player.getName() + ".isLeader", PlayerMeta.getMeta(player).isLeader());
         plugin.getConfigManager().getConfig("player-data.yml")
                 .set(player.getName() + ".guildName", PlayerMeta.getMeta(player).getGuildName());
+        plugin.getConfigManager().save("player-data.yml");
     }
 }
