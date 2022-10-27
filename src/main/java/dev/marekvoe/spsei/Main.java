@@ -47,6 +47,7 @@ public final class Main extends JavaPlugin {
        getCommand("tpdeny").setExecutor(new TpDenyCommand(this));
        getCommand("home").setExecutor(new HomeCommand(this));
        getCommand("sethome").setExecutor(new SetHomeCommand(this));
+       getCommand("guild").setExecutor(new GuildCommand(this));
     }
 
     @Override

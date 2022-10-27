@@ -22,6 +22,7 @@ public class JoinListener implements Listener {
         e.setJoinMessage(ChatColor.DARK_GRAY + "[" + ChatColor.GREEN + "+" + ChatColor.DARK_GRAY + "] "
                 + ChatColor.GREEN + player.getName());
         sendNews(player);
+        plugin.getPlayerManager().loadData(player);
 
     }
 
@@ -30,6 +31,7 @@ public class JoinListener implements Listener {
         player.sendMessage(ChatColor.GREEN +  "- Pridan prikaz /tpdeny");
         player.sendMessage(ChatColor.GREEN + "-  Pridany guildy: /guild create $jmeno_guildy$, /guild invite $jmeno_hrace$, /guild leave");
         player.sendMessage(ChatColor.GREEN + "- Pridany hracske statistiky, momentalne pracuji na web interface pro graficke znazorneni :)");
-        player.sendMessage(ChatColor.GREEN + "- Jestli se nekdo chce podivat na kod je dostupny na github.com/MarekVoe");
+        player.sendMessage(ChatColor.GREEN + "- Jestli se nekdo chce podivat na kod, tak je dostupny na github.com/MarekVoe");
+        player.sendMessage(ChatColor.RED + "- UPOZORNUJI, JESTLIZE BUDE V NASLEDUJICI DOBE RESTART TAK SE ODPOJUJTE PREDEM, KVULI ZTRATE DAT !");
     }
 }

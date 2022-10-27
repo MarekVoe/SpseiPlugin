@@ -14,3 +14,5 @@ commands:
     description: SetHome Command
   home:
     description: Home Command
+  guild:
+    description: Guild command

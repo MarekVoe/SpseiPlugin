@@ -20,5 +20,6 @@ public class QuitListener implements Listener {
         Player player = e.getPlayer();
         e.setQuitMessage(ChatColor.DARK_GRAY + "[" + ChatColor.RED + "-" + ChatColor.DARK_GRAY + "] "
                 + ChatColor.RED + player.getName());
+        plugin.getPlayerManager().saveData(player);
     }
 }

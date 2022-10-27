@@ -12,10 +12,17 @@ public class PlayerManager {
     }
 
     public void loadData(Player player) {
-         PlayerMeta.getMeta(player).setLeader(plugin.getConfigManager().getConfig("player-data.yml").getBoolean(player.getName() + ".isLeader"));
+         PlayerMeta.getMeta(player).setLeader(plugin.getConfigManager().getConfig("player-data.yml")
+                 .getBoolean(player.getName() + ".isLeader"));
+         PlayerMeta.getMeta(player).setGuildName(plugin.getConfigManager().getConfig("player-data.yml").
+                 getString(player.getName() + ".guildName"));
+
     }
 
     public void saveData(Player player) {
-
+        plugin.getConfigManager().getConfig("player-data.yml")
+                .set(player.getName() + ".isLeader", PlayerMeta.getMeta(player).isLeader());
+        plugin.getConfigManager().getConfig("player-data.yml")
+                .set(player.getName() + ".guildName", PlayerMeta.getMeta(player).getGuildName());
     }
 }
