@@ -1,0 +1,16 @@
+name: Spsei
+version: '${project.version}'
+main: dev.marekvoe.spsei.Main
+api-version: 1.19
+authors: [ MarekVoe ]
+commands:
+  tpa:
+    description: Tpa Command
+  tpdeny:
+    description: TpDeny Command
+  tpaccept:
+    description: TpAccept Command
+  sethome:
+    description: SetHome Command
+  home:
+    description: Home Command
